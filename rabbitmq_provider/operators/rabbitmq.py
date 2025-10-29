@@ -1,8 +1,6 @@
 from typing import Any
 
 from airflow.models import BaseOperator
-from airflow.utils.decorators import apply_defaults
-
 from rabbitmq_provider.hooks.rabbitmq import RabbitMQHook
 
 
@@ -25,7 +23,6 @@ class RabbitMQOperator(BaseOperator):
 
     ui_color = "#ff6600"
 
-    @apply_defaults
     def __init__(
         self,
         exchange: str,
